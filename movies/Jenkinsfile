@@ -114,7 +114,7 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         // Tag the ${APP_NAME}:latest image stream in the dev env as ${APP_NAME}:stage in staging
-                        openshift.tag("${DEV_PROJECT}/books:latest", "${STAGE_PROJECT}/books:stage")
+                        openshift.tag("${DEV_PROJECT}/${APP_NAME}:latest", "${STAGE_PROJECT}/${APP_NAME}:stage")
                     }
                 }
             }
